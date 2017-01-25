@@ -5,6 +5,8 @@ function Player(){
   this.rollSum = 0;
   this.turnTotalArray = [];
   this.turnScore = 0;
+  this.gameScoreArray = [];
+  this.gameScore = 0;
 }
 
 var playerOne = new Player();
@@ -28,12 +30,24 @@ var playerOne = new Player();
      playerOne.rollSum += parseInt(playerOne.rollArray[i]);
    } if (playerOne.roll !== 1) {
      playerOne.turnTotalArray.push(this.rollSum);
+   } else {
+     playerOne.turnTotalArray.push(0);
    }
  }
 
- Player.prototype.totalScore = function() {
+ Player.prototype.turnScoreTally = function() {
+   playerOne.turnScore = 0;
    for (var i =0; i < playerOne.turnTotalArray.length; i++) {
      playerOne.turnScore = parseInt(playerOne.turnTotalArray[i]);
+   }  if (playerOne.turnScore !== 0) {
+     playerOne.gameScoreArray.push(this.turnScore);
+   }
+ }
+
+ Player.prototype.gameScoreTally = function() {
+   playerOne.gameScore = 0;
+   for (var i =0; i < playerOne.gameScoreArray.length; i++) {
+     playerOne.gameScore += parseInt(playerOne.gameScoreArray[i]);
    }
  }
 
@@ -57,8 +71,10 @@ $(document).ready(function() {
   $("#playerOneHold").click(function(event) {
     event.preventDefault();
 
-    playerOne.totalScore();
-  
+    playerOne.turnScoreTally();
+    playerOne.gameScoreTally();
+
     $("#scoreOne").append("<li>" + playerOne.turnScore + "</li>");
+    $("#gameTotalScore").text(playerOne.gameScore);
   })
 });
