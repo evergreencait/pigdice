@@ -1,55 +1,44 @@
 // backend
 function Player(){
   this.roll = 0;
-  this.rollArray = [];
-  this.rollSum = 0;
-  this.turnTotalArray = [];
-  this.turnScore = 0;
-  this.gameScoreArray = [];
   this.gameScore = 0;
+  this.turnScore = 0;
 }
 
+var players= [];
 var playerOne = new Player();
+var playerTwo = new Player();
+players.push(playerOne, playerTwo);
 
-  function randomRoll() {
-      return Math.floor(Math.random() * 6 ) + 1;
+function randomRoll () {
+  return parseInt(Math.floor(Math.random() * 6 ) + 1);
+}
+
+
+Player.prototype.turnTotal = function () {
+  if(this.roll === 1) {
+    this.turnScore = 0;
+  } else {
+    this.turnScore += this.roll;
   }
+}
 
- Player.prototype.oneRule = function() {
-   if (this.roll === 1) {
-      playerOne.rollArray = [];
-   } else {
-     playerOne.rollArray.push(this.roll);
-   }
- }
+Player.prototype.gameTotal = function() {
+  this.gameScore += this.turnScore;
+}
 
- // add tallies for total tally count
- Player.prototype.tallyCount = function() {
-   playerOne.rollSum = 0;
-   for (var i =0; i < playerOne.rollArray.length; i++) {
-     playerOne.rollSum += parseInt(playerOne.rollArray[i]);
-   } if (playerOne.roll !== 1) {
-     playerOne.turnTotalArray.push(this.rollSum);
-   } else {
-     playerOne.turnTotalArray.push(0);
-   }
- }
+Player.prototype.clearScores = function() {
+  this.roll = 0;
+  this.turnScore = 0;
+}
 
- Player.prototype.turnScoreTally = function() {
-   playerOne.turnScore = 0;
-   for (var i =0; i < playerOne.turnTotalArray.length; i++) {
-     playerOne.turnScore = parseInt(playerOne.turnTotalArray[i]);
-   }  if (playerOne.turnScore !== 0) {
-     playerOne.gameScoreArray.push(this.turnScore);
-   }
- }
+Player.prototype.win = function () {
+  if (this.gameScore >= 100) {
+    alert("you won!");
+    this.gamesScore = 0;
+  } 
+}
 
- Player.prototype.gameScoreTally = function() {
-   playerOne.gameScore = 0;
-   for (var i =0; i < playerOne.gameScoreArray.length; i++) {
-     playerOne.gameScore += parseInt(playerOne.gameScoreArray[i]);
-   }
- }
 
 // frontend
 $(document).ready(function() {
@@ -57,24 +46,22 @@ $(document).ready(function() {
     event.preventDefault();
 
     playerOne.roll = randomRoll();
+    playerOne.turnTotal();
 
-    playerOne.oneRule();
-
-    playerOne.tallyCount();
-
-    $("#playerOneCurrentDice").text(playerOne.roll);
-    $("#playerOneTally").text(playerOne.rollArray);
-    $("#playerOneTotal").text(playerOne.rollSum);
+    $("#playerOneDice").text(playerOne.roll);
+    $("#playerOneTotal").text(playerOne.turnScore);
   });
 
 // playerone Hold click function
   $("#playerOneHold").click(function(event) {
     event.preventDefault();
 
-    playerOne.turnScoreTally();
-    playerOne.gameScoreTally();
+     playerOne.gameTotal();
+     playerOne.win();
+     playerOne.clearScores();
 
-    $("#scoreOne").append("<li>" + playerOne.turnScore + "</li>");
+     $("#playerOneDice").text(playerOne.roll);
+     $("#playerOneTotal").text(playerOne.turnScore);
     $("#gameTotalScore").text(playerOne.gameScore);
   })
 });
