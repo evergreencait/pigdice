@@ -13,3 +13,7 @@
   float: left;
 
 }
+
+.playerTwoGame {
+  display: none;
+}

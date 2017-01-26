@@ -30,7 +30,7 @@
               <h2>Player Two</h2>
               <ul id="scoreTwo">
               </ul>
-              <p></p>
+              <p id = "gameTotalScore2"></p>
             </div>
           </div>
         </div>
@@ -39,30 +39,30 @@
 
     <!-- game -->
     <!-- player one -->
-    <div class="row">
-      <div class="col-md-5">
-        <div class="playerOneGame">
-          <h2>Player One Dice</h2>
-          <button type="button" class="btn btn-primary" id="playerOneRoll">Roll Dice!</button>
-          <p id="playerOneDice">Current Roll = </p>
-          <p id="playerOneTotal">Turn Score</p>
-          <button type="button" class="btn btn-primary" id="playerOneHold">Hold!</button>
-        </div>
+
+      <div class="col-md-5 playerOneGame">
+        <h2>Player One Dice</h2>
+        <button type="button" class="btn btn-primary" id="playerOneRoll">Roll Dice!</button>
+        <h5>Your roll is </h5>
+        <p id="playerOneDice"></p>
+        <h5>Your turn score currently is</h5>
+        <p id="playerOneTotal"></p>
+        <button type="button" class="btn btn-primary" id="playerOneHold">Hold!</button>
       </div>
-    </div>
+
 
     <!-- player two -->
-    <div class="row">
-      <div class="col-md-5">
-        <div class="playerTwoGame">
-          <h2>Player Two Dice</h2>
-          <button type="button" class="btn btn-primary" id="playerTwoRoll">Roll Dice!</button>
-          <p id="playerTwoDiceImg">This is where the dice image will show</p>
-          <p id="playerTwoTally">This is where the score will show</p>
-          <button type="button" class="btn btn-primary" id="playerTwoHold">Hold!</button>
-        </div>
+
+      <div class="col-md-5 playerTwoGame">
+        <h2>Player Two Dice</h2>
+        <button type="button" class="btn btn-primary" id="playerTwoRoll">Roll Dice!</button>
+        <h5>Your roll is </h5>
+        <p id="playerTwoDice"></p>
+        <h5>Your turn score currently is</h5>
+        <p id="playerTwoTotal"></p>
+        <button type="button" class="btn btn-primary" id="playerTwoHold">Hold!</button>
       </div>
-    </div>
+
   </div>
 </body>
 </html>
