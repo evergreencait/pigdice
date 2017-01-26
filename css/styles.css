@@ -1,4 +1,15 @@
-.row1 {
+.col-md-4 {
   float: right;
   margin-right: 100px;
+  border: 5px solid black;
+}
+
+.playerTwoScore {
+  float: right;
+
+}
+
+.playerOneScore {
+  float: left;
+
 }

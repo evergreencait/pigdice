@@ -1,67 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <script src="js/jquery-3.1.1.js"> </script>
-    <script src="js/scripts.js"> </script>
-    <title>Pigdice</title>
-  </head>
-  <body>
-    <div class="container">
-<!-- heading -->
-      <div class="jumbotron">
-        <h1>Dice Dice Baby</h1>
-      </div>
-<!-- score keeper -->
-      <div class="row1">
-        <div class="col-md-4">
-          <div class="score">
-<!-- playerone score -->
-            <div class="playerOneScore">
-              <h2>Player One</h2>
-              <ul id="scoreOne">
-              </ul>
-              <p id="gameTotalScore"></p>
-            </div>
-<!-- playertwo score -->
+<head>
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <script src="js/jquery-3.1.1.js"> </script>
+  <script src="js/scripts.js"> </script>
+  <title>Pigdice</title>
+</head>
+<body>
+  <div class="container">
+    <!-- heading -->
+    <div class="jumbotron">
+      <h1>Dice Dice Baby</h1>
+    </div>
+    <!-- score keeper -->
+    <div class="row1">
+      <div class="col-md-4">
+        <div class="score">
+          <!-- playerone score -->
+          <div class="playerOneScore">
+            <h2>Player One</h2>
+            <ul id="scoreOne">
+            </ul>
+            <p id="gameTotalScore"></p>
+          </div>
+          <!-- playertwo score -->
+          <div class = "row2">
             <div class="playerTwoScore">
               <h2>Player Two</h2>
               <ul id="scoreTwo">
-                <h3>SCORE</h3>
               </ul>
+              <p></p>
             </div>
-          </div>
-        </div>
-      </div>
-
-<!-- game -->
-<!-- player one -->
-      <div class="row">
-        <div class="col-md-5">
-          <div class="playerOneGame">
-            <h2>Player One Dice</h2>
-            <button type="button" class="btn btn-primary" id="playerOneRoll">Roll Dice!</button>
-            <p id="playerOneCurrentDice">Current Roll = </p>
-            <p id="playerOneTally">Roll Tally = </p>
-            <p id="playerOneTotal"> Total of Tally </p>
-            <button type="button" class="btn btn-primary" id="playerOneHold">Hold!</button>
-          </div>
-        </div>
-      </div>
-
-<!-- player two -->
-      <div class="row">
-        <div class="col-md-5">
-          <div class="playerTwoGame">
-            <h2>Player Two Dice</h2>
-            <button type="button" class="btn btn-primary" id="playerTwoRoll">Roll Dice!</button>
-            <p id="playerTwoDiceImg">This is where the dice image will show</p>
-            <p id="playerTwoTally">This is where the score will show</p>
-            <button type="button" class="btn btn-primary" id="playerTwoHold">Hold!</button>
           </div>
         </div>
       </div>
     </div>
-  </body>
+
+    <!-- game -->
+    <!-- player one -->
+    <div class="row">
+      <div class="col-md-5">
+        <div class="playerOneGame">
+          <h2>Player One Dice</h2>
+          <button type="button" class="btn btn-primary" id="playerOneRoll">Roll Dice!</button>
+          <p id="playerOneCurrentDice">Current Roll = </p>
+          <p id="playerOneTally">Roll Tally = </p>
+          <p id="playerOneTotal"> Total of Tally </p>
+          <button type="button" class="btn btn-primary" id="playerOneHold">Hold!</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- player two -->
+    <div class="row">
+      <div class="col-md-5">
+        <div class="playerTwoGame">
+          <h2>Player Two Dice</h2>
+          <button type="button" class="btn btn-primary" id="playerTwoRoll">Roll Dice!</button>
+          <p id="playerTwoDiceImg">This is where the dice image will show</p>
+          <p id="playerTwoTally">This is where the score will show</p>
+          <button type="button" class="btn btn-primary" id="playerTwoHold">Hold!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
