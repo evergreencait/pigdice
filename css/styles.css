@@ -1,19 +1,50 @@
-.col-md-4 {
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  
+}
+
+img {
+  height: 200px;
+  width: 325px;
+}
+.score {
   float: right;
   margin-right: 100px;
-  border: 5px solid black;
+  border-radius: 10%;
+  padding-bottom: 500px;
+  background-size: cover;
+  background-image: url("http://orig07.deviantart.net/91df/f/2008/076/4/9/notepad_by_freestock.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .playerTwoScore {
   float: right;
+  padding-top: 100px;
 
 }
 
 .playerOneScore {
   float: left;
+  padding-top: 100px;
 
 }
 
 .playerTwoGame {
   display: none;
+}
+
+.jumbotron {
+  font-family: 'Orbitron', sans-serif;
+  background-image: url("http://i.huffpost.com/gen/1831284/images/o-ICE-CUBE-facebook.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+}
+
+.newgame {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 50px;
 }

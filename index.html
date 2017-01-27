@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="css/styles.css" type="text/css">
   <script src="js/jquery-3.1.1.js"> </script>
   <script src="js/scripts.js"> </script>
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <title>Pigdice</title>
 </head>
 <body>
@@ -15,23 +16,17 @@
     </div>
     <!-- score keeper -->
     <div class="row1">
-      <div class="col-md-4">
-        <div class="score">
-          <!-- playerone score -->
-          <div class="playerOneScore">
-            <h2>Player One</h2>
-            <ul id="scoreOne">
-            </ul>
-            <p id="gameTotalScore"></p>
-          </div>
-          <!-- playertwo score -->
-          <div class = "row2">
-            <div class="playerTwoScore">
-              <h2>Player Two</h2>
-              <ul id="scoreTwo">
-              </ul>
-              <p id = "gameTotalScore2"></p>
-            </div>
+      <div class="col-md-4 score">
+        <!-- playerone score -->
+        <div class="playerOneScore">
+          <h3>Player One</h3>
+          <p id="gameTotalScore"></p>
+        </div>
+        <!-- playertwo score -->
+        <div class = "row2">
+          <div class="playerTwoScore">
+            <h3>Player Two</h3>
+            <p id = "gameTotalScore2"></p>
           </div>
         </div>
       </div>
@@ -40,29 +35,33 @@
     <!-- game -->
     <!-- player one -->
 
-      <div class="col-md-5 playerOneGame">
-        <h2>Player One Dice</h2>
-        <button type="button" class="btn btn-primary" id="playerOneRoll">Roll Dice!</button>
-        <h5>Your roll is </h5>
-        <p id="playerOneDice"></p>
-        <h5>Your turn score currently is</h5>
-        <p id="playerOneTotal"></p>
-        <button type="button" class="btn btn-primary" id="playerOneHold">Hold!</button>
-      </div>
+    <div class="col-md-5 playerOneGame">
+      <h2>Player One Dice</h2>
+      <p><img src="img/ice1.jpg"/></p>
+      <button type="button" class="btn btn-primary" id="playerOneRoll">Roll Dice!</button>
+      <h5>Your roll is </h5>
+      <p id="playerOneDice"></p>
+      <h5>Your turn score currently is</h5>
+      <p id="playerOneTotal"></p>
+      <button type="button" class="btn btn-danger" id="playerOneHold">Hold!</button>
+    </div>
 
 
     <!-- player two -->
 
-      <div class="col-md-5 playerTwoGame">
-        <h2>Player Two Dice</h2>
-        <button type="button" class="btn btn-primary" id="playerTwoRoll">Roll Dice!</button>
-        <h5>Your roll is </h5>
-        <p id="playerTwoDice"></p>
-        <h5>Your turn score currently is</h5>
-        <p id="playerTwoTotal"></p>
-        <button type="button" class="btn btn-primary" id="playerTwoHold">Hold!</button>
-      </div>
-
+    <div class="col-md-5 playerTwoGame">
+      <h2>Player Two Dice</h2>
+      <p><img src="img/icecube2.jpg"/></p>
+      <button type="button" class="btn btn-primary" id="playerTwoRoll">Roll Dice!</button>
+      <h5>Your roll is </h5>
+      <p id="playerTwoDice"></p>
+      <h5>Your turn score currently is</h5>
+      <p id="playerTwoTotal"></p>
+      <button type="button" class="btn btn-primary" id="playerTwoHold">Hold!</button>
+    </div>
   </div>
+  <div class = "newgame">
+  <input type="button" value=" Push For New Game" onClick="window.location.reload()">
+</div>
 </body>
 </html>
